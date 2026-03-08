@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Issue Tracker</title>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="style/style.css">
+
+    <!-- fav-icon -->
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+
+    <!-- font-family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- tailwind+daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="navbar bg-base-100 shadow-sm">
+            <div class="flex-1">
+                <a class="btn btn-active bg-white border border-none text-xl"><i
+                        class="fa-brands fa-github text-4xl"></i> GitHub Issues
+                    Tracker</a>
+            </div>
+
+            <div class="join">
+                <div>
+                    <label class="input validator join-item">
+                        <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
+                                stroke="currentColor">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </g>
+                        </svg>
+                        <input type="text" placeholder="Search Issues..." required />
+                    </label>
+                    <div class="validator-hint hidden">Search Github Issues</div>
+                </div>
+                <button class="btn btn-primary rounded-r-sm">Search</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Buttons -->
+    <header>
+        <section class="w-11/12 mx-auto bg-base-100 p-3 flex gap-3 shadow my-2 rounded-sm">
+            <button class="btn btn-outline btn-primary">All</button>
+            <button class="btn btn-outline btn-primary">Open</button>
+            <button class="btn btn-outline btn-primary">Closed</button>
+        </section>
+    </header>
+
+    <main class="bg-base-100">
+        <!-- Count-Section -->
+        <section class="w-11/12 mx-auto bg-base-100 flex justify-between border-2 rounded-sm border-gray-200 p-4">
+            <div class="flex items-center gap-2">
+                <!-- <div><i class="fa-regular fa-rectangle-list text-3xl"></i></div> -->
+                <div><img src="./assets/Aperture.png" alt=""></div>
+
+                <div>
+                    <p class="font-semibold text-xl"><span>0</span> Issues</p>
+                    <p class="text-gray-500 font-medium">Track and manage your project issues</p>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="flex gap-1 items-center">
+                    <p class="w-4 h-4 bg-green-500 rounded-full"> </p>
+                    <p>Open</p>
+                </div>
+
+                <div class="flex gap-1 items-center">
+                    <p class="w-4 h-4 bg-purple-500 rounded-full"> </p>
+                    <p>Closed</p>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- Issues-Card -->
+        <section
+            class="w-11/12 mx-auto grid gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 my-5 bg-base-200 shadow p-4">
+
+            <!-- Card-1 -->
+            <section class="bg-white p-3.5 rounded-md border-t-4 border-t-green-500 space-y-3">
+                <div class="flex justify-between">
+                    <div>
+                        <img src="./assets/Open-Status.png" alt="">
+                        <!-- <img src="./assets/Closed- Status .png" alt=""> -->
+                    </div>
+                    <div>
+                        <p class="bg-red-200 text-red-500 border-2 rounded-full px-3 text-center py-0.5 font-medium">
+                            HIGH</p>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-2xl font-semibold">Fix navigation menu on mobile devices</h4>
+                    <p class="text-gray-500 font-medium">The navigation menu doesn't collapse properly on mobile
+                        devices...</p>
+
+                    <div class="flex gap-2">
+                        <button class="btn bg-red-100 text-red-500 px-3 py-2 rounded-full"><i
+                                class="fa-solid fa-bug"></i>
+                            BUG</button>
+                        <button class="btn bg-amber-100 text-amber-500 px-3 py-2 rounded-full"><i
+                                class="fa-regular fa-life-ring"></i> HELP
+                            WANTED</button>
+                    </div>
+
+                </div>
+
+                <hr class="text-gray-300 divider h-0.5 my-5">
+
+                <div class="flex justify-between text-gray-500">
+                    <div class="space-y-2">
+                        <p># 1 by john_doe</p>
+                        <p>Assignee: jane_smith</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <p>1/15/2024</p>
+                        <p>Updated: 1/15/2024</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Card-2 -->
+            <section class="bg-white p-3.5 rounded-md border-t-4 border-t-green-500 space-y-3">
+                <div class="flex justify-between">
+                    <div>
+                        <!-- <img src="./assets/Open-Status.png" alt=""> -->
+                        <img src="./assets/Closed- Status .png" alt="">
+                    </div>
+                    <div>
+                        <p class="bg-red-200 text-red-500 border-2 rounded-full px-3 text-center py-0.5 font-medium">
+                            HIGH</p>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-2xl font-semibold">Fix navigation menu on mobile devices</h4>
+                    <p class="text-gray-500 font-medium">The navigation menu doesn't collapse properly on mobile
+                        devices...</p>
+
+                    <div class="flex gap-2">
+                        <button class="btn bg-red-100 text-red-500 px-3 py-2 rounded-full"><i
+                                class="fa-solid fa-bug"></i>
+                            BUG</button>
+                        <button class="btn bg-amber-100 text-amber-500 px-3 py-2 rounded-full"><i
+                                class="fa-regular fa-life-ring"></i> HELP
+                            WANTED</button>
+                    </div>
+
+                </div>
+
+                <hr class="text-gray-300 divider h-0.5 my-5">
+
+                <div class="flex justify-between text-gray-500">
+                    <div class="space-y-2">
+                        <p># 1 by john_doe</p>
+                        <p>Assignee: jane_smith</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <p>1/15/2024</p>
+                        <p>Updated: 1/15/2024</p>
+                    </div>
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
