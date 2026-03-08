@@ -57,12 +57,18 @@
         </div>
     </nav>
 
-    <!-- Buttons -->
+    <!-- Buttons & Spinner -->
     <header>
+        <!-- Buttons -->
         <section class="w-11/12 mx-auto bg-base-100 p-3 flex gap-3 shadow my-2 rounded-sm">
             <button class="btn btn-outline btn-primary">All</button>
             <button class="btn btn-outline btn-primary">Open</button>
             <button class="btn btn-outline btn-primary">Closed</button>
+        </section>
+
+        <!-- Spinner -->
+        <section class="w-11/12 flex justify-center">
+            <span class="loading loading-spinner loading-lg"></span>
         </section>
     </header>
 
@@ -106,8 +112,9 @@
                         <!-- <img src="./assets/Closed- Status .png" alt=""> -->
                     </div>
                     <div>
-                        <p class="bg-red-200 text-red-500 border-2 rounded-full px-3 text-center py-0.5 font-medium">
-                            HIGH</p>
+                        <button
+                            class="btn bg-red-200 text-red-500 border-2 rounded-full px-3 text-center py-0.5 font-medium">
+                            HIGH</button>
                     </div>
                 </div>
 
@@ -151,8 +158,9 @@
                         <img src="./assets/Closed- Status .png" alt="">
                     </div>
                     <div>
-                        <p class="bg-red-200 text-red-500 border-2 rounded-full px-3 text-center py-0.5 font-medium">
-                            HIGH</p>
+                        <button
+                            class="btn bg-red-200 text-red-500 border-2 rounded-full px-3 text-center py-0.5 font-medium">
+                            HIGH</button>
                     </div>
                 </div>
 
@@ -232,9 +240,9 @@
                             </div>
                             <div>
                                 <p>Priority:</p>
-                                <p
-                                    class="bg-red-200 text-red-500 border-2 rounded-full px-3 text-center py-0.5 font-medium">
-                                    HIGH</p>
+                                <button
+                                    class="btn bg-red-200 text-red-500 border-2 rounded-full px-3 text-center py-0.5 font-medium">
+                                    HIGH</button>
                             </div>
                         </div>
                         <div class="modal-action">
