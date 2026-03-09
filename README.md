@@ -1,6 +1,5 @@
 Create a readme file and answer this question on your own. Don’t copy-paste from Google or any AI chatbot.
 
-5️⃣ What are template literals?
 
 
 1️⃣ What is the difference between var, let, and const?
@@ -15,5 +14,7 @@ Create a readme file and answer this question on your own. Don’t copy-paste fr
 4️⃣ What is an arrow function?
 ## 4. Answer: arrow function is shorter to cleaner way to write javascript function this method look like this type: const a () => {}; it's very cleaner function in javascript.
 
+5️⃣ What are template literals?
+## 5. Answer: Template Literals are a way to write strings in JavaScript more easily and dynamically. They were introduced in ES6 and use backticks (` `) instead of quotes ("" or ''). They allow you to: Embed variables inside strings Write multi-line strings Use expressions inside strings
 
 
