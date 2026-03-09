@@ -8,7 +8,7 @@ document.getElementById("signInBtn").addEventListener("click", () => {
     console.log(passwordValue);
 
     if (usernameValue == "admin" && passwordValue == "admin123") {
-        window.location.assign("/github_issue_tracker.html")
+        window.location.assign("./github_issue_tracker.html")
     }
     else {
         alert("Sign In Failed");

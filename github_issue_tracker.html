@@ -29,7 +29,7 @@
 
 <body>
 
-    <!-- Navbar -->
+    <!-- Navbar & Search -->
     <nav>
         <div class="navbar bg-base-100 shadow-sm">
             <div class="flex-1">
@@ -48,11 +48,11 @@
                                 <path d="m21 21-4.3-4.3"></path>
                             </g>
                         </svg>
-                        <input type="text" placeholder="Search Issues..." required />
+                        <input id="search-input" type="text" placeholder="Search Issues..." required />
                     </label>
                     <div class="validator-hint hidden">Search Github Issues</div>
                 </div>
-                <button class="btn btn-primary rounded-r-sm">Search</button>
+                <button id="search-btn" class="btn btn-primary rounded-r-sm">Search</button>
             </div>
         </div>
     </nav>
@@ -61,7 +61,7 @@
     <header>
         <!-- Buttons -->
         <section class="w-11/12 mx-auto bg-base-100 p-3 flex gap-3 shadow my-2 rounded-sm">
-            <button id="all-btn" class="btn btn-outline btn-primary">All</button>
+            <button id="all-btn" class="btn btn-outline btn-primary btn-active">All</button>
             <button id="open-btn" class="btn btn-outline btn-primary">Open</button>
             <button id="closed-btn" class="btn btn-outline btn-primary">Closed</button>
         </section>
@@ -80,8 +80,7 @@
                 <div><img src="./assets/Aperture.png" alt=""></div>
 
                 <div>
-                    <p class="font-semibold text-xl"><span id="all-btn-count">0</span> <span id="open-btn-count"
-                            class="hidden">0</span> <span id="closed-btn-count" class="hidden">0</span> Issues</p>
+                    <p class="font-semibold text-xl"><span id="count">0</span> Issues</p>
                     <p class="text-gray-500 font-medium">Track and manage your project issues</p>
                 </div>
             </div>
@@ -101,57 +100,30 @@
 
         </section>
 
-        <!-- Issues-Card -->
-        <section id="issues-container"
-            class="w-11/12 mx-auto grid gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 my-5 bg-base-200 shadow p-4">
+        <!-- All-Issues-Card -->
+        <section id="issues-container">
+            <section id="all-issues-container"
+                class="w-11/12 mx-auto grid gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 my-5 bg-base-200 shadow p-4">
 
-            <!-- Card-1 -->
+                <!-- Card-1 -->
 
+            </section>
 
-            <!-- Card-2 -->
-            <!-- <section class="bg-white p-3.5 rounded-md border-t-4 border-t-green-500 space-y-3">
-                <div class="flex justify-between">
-                    <div> -->
-            <!-- <img src="./assets/Open-Status.png" alt=""> -->
-            <!-- <img src="./assets/Closed- Status .png" alt="">
-                    </div>
-                    <div>
-                        <button
-                            class="btn bg-red-200 text-red-500 border-2 rounded-full px-3 text-center py-0.5 font-medium">
-                            HIGH</button>
-                    </div>
-                </div> -->
+            <!-- Open-Issues-Card -->
+            <section id="open-issues-container"
+                class="w-11/12 mx-auto grid gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 my-5 bg-base-200 shadow p-4 hidden">
 
-            <!-- <div class="space-y-3">
-                    <h4 class="text-2xl font-semibold">Fix navigation menu on mobile devices</h4>
-                    <p class="text-gray-500 font-medium">The navigation menu doesn't collapse properly on mobile
-                        devices...</p>
+                <!-- Card-2 -->
 
-                    <div class="flex gap-2">
-                        <button class="btn bg-red-100 text-red-500 px-3 py-2 rounded-full"><i
-                                class="fa-solid fa-bug"></i>
-                            BUG</button>
-                        <button class="btn bg-amber-100 text-amber-500 px-3 py-2 rounded-full"><i
-                                class="fa-regular fa-life-ring"></i> HELP
-                            WANTED</button>
-                    </div>
+            </section>
 
-                </div> -->
+            <!-- Closed-Issues-Card -->
+            <section id="closed-issues-container"
+                class="w-11/12 mx-auto grid gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 my-5 bg-base-200 shadow p-4 hidden">
 
-            <!-- <hr class="text-gray-300 divider h-0.5 my-5"> -->
-            <!-- 
-                <div class="flex justify-between text-gray-500">
-                    <div class="space-y-2">
-                        <p># 1 by john_doe</p>
-                        <p>Assignee: jane_smith</p>
-                    </div>
+                <!-- Card-3 -->
 
-                    <div class="space-y-2">
-                        <p>1/15/2024</p>
-                        <p>Updated: 1/15/2024</p>
-                    </div>
-                </div> -->
-
+            </section>
         </section>
 
         <!-- Modal -->
@@ -159,59 +131,8 @@
             <!-- Open the modal using ID.showModal() method -->
             <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
             <dialog id="issues_modal" class="modal">
-                <div class="modal-box space-y-6">
-                    <form method="dialog">
-                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                    </form>
-                    <div id="issues-details">
-                        <h3 class="text-lg font-bold">Fix broken image uploads!</h3>
+                <div id="issues-details" class="modal-box space-y-6">
 
-                        <div class="flex items-center gap-7">
-                            <p class=""><button
-                                    class="btn btn-active bg-green-500 text-white rounded-full ">Open</button>
-
-                            </p>
-                            <li class="text-gray-500">Opened by Fahim Ahmed</li>
-                            <li class="text-gray-500">22/02/2026</li>
-                        </div>
-
-                    </div>
-
-                    <div class="flex gap-2">
-                        <button class="btn bg-red-100 text-red-500 px-3 py-2 rounded-full"><i
-                                class="fa-solid fa-bug"></i>
-                            BUG</button>
-                        <button class="btn bg-amber-100 text-amber-500 px-3 py-2 rounded-full"><i
-                                class="fa-regular fa-life-ring"></i> HELP
-                            WANTED</button>
-                    </div>
-
-                    <div>
-                        <p class="text-gray-500 font-medium">
-                            The navigation menu doesn't collapse properly on mobile devices. Need to fix the
-                            responsive behavior.
-                        </p>
-                    </div>
-
-                    <div class="flex justify-between">
-                        <div>
-                            <p>Assignee:</p>
-                            <p>Fahim Ahmed</p>
-                        </div>
-                        <div>
-                            <p>Priority:</p>
-                            <button
-                                class="btn bg-red-200 text-red-500 border-2 rounded-full px-3 text-center py-0.5 font-medium">
-                                HIGH</button>
-                        </div>
-                    </div>
-                    <div class="modal-action">
-                        <form method="dialog">
-                            <!-- if there is a button in form, it will close the modal -->
-                            <button class="btn btn-primary">Close</button>
-                        </form>
-                    </div>
-                </div>
                 </div>
             </dialog>
         </section>
