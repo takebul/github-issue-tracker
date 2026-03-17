@@ -1,3 +1,4 @@
+let allCounts = 0;
 let openCount = 0;
 let closedCount = 0;
 
@@ -39,7 +40,7 @@ buttons.forEach((btn) => {
             allCount.innerText = `${closedCount}`
         }
         if (btn.getAttribute("id") == "all-btn") {
-            allCount.innerText = `${50}`
+            allCount.innerText = `${allCounts}`
         }
     });
 });
@@ -84,6 +85,7 @@ const displayAllIssues = (issues) => {
 
     allCount.innerText = `${issues.length}`
     issues.forEach(issue => {
+        allCounts++;
         console.log(issue.status);
         const addAllIssue = document.createElement("div");
         addAllIssue.innerHTML = `
